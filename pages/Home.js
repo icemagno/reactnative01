@@ -27,9 +27,13 @@ export default function Home() {
       <TouchableOpacity style={styles.button} onPress={incrementar}>
         <Text>Pressione Aqui</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Form')}>
-          <Text>Navegar</Text>
+          <Text>Formulário</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coordinates')}>
+          <Text>Coordenadas</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
