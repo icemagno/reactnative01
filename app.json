@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "reactnative01",
-    "slug": "reactnative01",
+    "name": "sisgeodef",
+    "slug": "sisgeodef",
+    "description": "Sisgeodef Midia Device",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +22,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "br.mil.defesa.sisgeodef",
       "permissions": [ "CAMERA", "AUDIO_RECORDING", "ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "FOREGROUND_SERVICE", "ACCESS_BACKGROUND_LOCATION" ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
