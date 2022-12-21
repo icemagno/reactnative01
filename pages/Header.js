@@ -1,18 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, StatusBar, Text, View } from 'react-native';
 
 export default function Header(props) {
   return (
-      <View style={styles.container}>
+    <>
+    <StatusBar barStyle = "dark-content" hidden = {true} backgroundColor = "#FFFFFF" translucent = {true}/>
+    <View style={styles.container}>
        <Text style={styles.headerText}>{props.title}</Text>
-      </View>
+    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
     container: {
       paddingTop: 30,
-      paddingBottom: 20,
+      paddingBottom: 10,
       backgroundColor: 'navy',
       alignItems: 'center',
     },
