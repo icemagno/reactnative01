@@ -10,14 +10,13 @@ import {
 } from "react-native";
 
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
-import OpenStreetMapScreen from './OpenStreetMapScreen';
-
+import Header from "./Header";
 
 const Home = ({ navigation }) => {
 
     // Dummy Datas
 
-    const initialCurrentLocation = {
+    const currentLocation = {
         streetName: "Kuching",
         gps: {
             latitude: 1.5496614931250685,
@@ -25,66 +24,11 @@ const Home = ({ navigation }) => {
         }
     }
 
-    const categoryData = [
-        {
-            id: 1,
-            name: "Rice",
-            icon: icons.rice_bowl,
-        },
-        {
-            id: 2,
-            name: "Noodles",
-            icon: icons.noodle,
-        },
-        {
-            id: 3,
-            name: "Hot Dogs",
-            icon: icons.hotdog,
-        },
-        {
-            id: 4,
-            name: "Salads",
-            icon: icons.salad,
-        },
-        {
-            id: 5,
-            name: "Burgers",
-            icon: icons.hamburger,
-        },
-        {
-            id: 6,
-            name: "Pizza",
-            icon: icons.pizza,
-        },
-        {
-            id: 7,
-            name: "Snacks",
-            icon: icons.fries,
-        },
-        {
-            id: 8,
-            name: "Sushi",
-            icon: icons.sushi,
-        },
-        {
-            id: 9,
-            name: "Desserts",
-            icon: icons.donut,
-        },
-        {
-            id: 10,
-            name: "Drinks",
-            icon: icons.drink,
-        },
-
-    ]
-
     // price rating
     const affordable = 1
-    const fairPrice = 2
     const expensive = 3
 
-    const restaurantData = [
+    const restaurants = [
         {
             id: 1,
             name: "ByProgrammers Burger",
@@ -334,16 +278,13 @@ const Home = ({ navigation }) => {
 
     ]
 
-    const [restaurants, setRestaurants] = React.useState(restaurantData)
-    const [currentLocation, setCurrentLocation] = React.useState(initialCurrentLocation)
-
-
     function renderRestaurantList() {
         const renderItem = ({ item }) => (
-            <TouchableOpacity  style={{ marginBottom: SIZES.padding * 2 }}
-                onPress={() => navigation.navigate("OpenStreetMapScreen", { item, currentLocation })}
+            <TouchableOpacity  
+                style={{ marginBottom: SIZES.padding * 2 }}
+                onPress={() => navigation.navigate("Coordinates", { item, currentLocation })}
             >
-                {/* Image */}
+                
                 <View style={{ marginBottom: SIZES.padding }} >
                     <Image
                         source={item.photo}
@@ -355,7 +296,6 @@ const Home = ({ navigation }) => {
                         }}
                     />
                 </View>
-                {/* Restaurant Info */}
                 <Text style={{ ...FONTS.body2 }}>{item.name}</Text>
             </TouchableOpacity>
         )
@@ -374,9 +314,12 @@ const Home = ({ navigation }) => {
     }
 
     return (
+        <>
+        <Header title="Principal" />
         <SafeAreaView style={styles.container}>
             {renderRestaurantList()}
         </SafeAreaView>
+        </>
     )
 }
 

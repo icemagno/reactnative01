@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, StatusBar, Text, View } from 'react-native';
+import { COLORS } from '../constants'
 
 export default function Header(props) {
   return (
@@ -14,15 +15,25 @@ export default function Header(props) {
 
 const styles = StyleSheet.create({
     container: {
-      paddingTop: 30,
+      paddingTop: 20,
       paddingBottom: 10,
-      backgroundColor: 'navy',
+      backgroundColor: COLORS.white,
       alignItems: 'center',
+
+      shadowColor: "#000",
+      shadowOffset: {
+          width: 0,
+          height: 3,
+      },
+      shadowOpacity: 0.1,
+      shadowRadius: 3,
+      elevation: 10,
+
     },
     headerText: {
       fontSize: 20,
       fontWeight: 'bold',
-      color: 'white'
-    }
+      color: COLORS.darkgray
+    }  
   });
 

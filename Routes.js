@@ -6,7 +6,7 @@ import Tabs from './navigation/Tabs';
 import Form from './pages/Form';
 import HomeAntigo from './pages/HomeAntigo';
 import Coordinates from './pages/Coordinates';
-import OpenStreetMapScreen from './pages/OpenStreetMapScreen';
+
  
 const AppStack = createStackNavigator();
  
@@ -18,7 +18,6 @@ const Routes = () => {
                 <AppStack.Screen name="HomeAntigo" component={HomeAntigo} />
                 <AppStack.Screen name="Form" component={Form} />
                 <AppStack.Screen name="Coordinates" component={Coordinates} />
-                <AppStack.Screen name="OpenStreetMapScreen" component={OpenStreetMapScreen} />
             </AppStack.Navigator>
         </NavigationContainer>
     );

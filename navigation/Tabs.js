@@ -7,6 +7,9 @@ import { isIphoneX } from 'react-native-iphone-x-helper';
 import Home from "../pages/Home"
 
 import { COLORS, icons } from "../constants"
+import Coordinates from '../pages/Coordinates';
+import Form from '../pages/Form';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -98,8 +101,9 @@ const Tabs = () => {
     return (
         <Tab.Navigator
             screenOptions={{
-                showLabel: false,
-                style: {
+                tabBarShowLabel: false,
+                headerShown: false,
+                tabBarStyle: {
                     position: 'absolute',
                     left: 0,
                     bottom: 0,
@@ -109,11 +113,7 @@ const Tabs = () => {
                     elevation: 0
                 }
             }}
-            tabBar={(props) => (
-                <CustomTabBar
-                    props={props}
-                />
-            )}
+            tabBar={(props) => (<CustomTabBar props={props} /> )}
         >
             <Tab.Screen
                 name="Home"
@@ -139,8 +139,8 @@ const Tabs = () => {
             />
 
             <Tab.Screen
-                name="Search"
-                component={Home}
+                name="Coordinates"
+                component={Coordinates}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
@@ -162,8 +162,8 @@ const Tabs = () => {
             />
 
             <Tab.Screen
-                name="Like"
-                component={Home}
+                name="Form"
+                component={Form}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
@@ -185,7 +185,7 @@ const Tabs = () => {
             />
 
             <Tab.Screen
-                name="User"
+                name="Map"
                 component={Home}
                 options={{
                     tabBarIcon: ({ focused }) => (
