@@ -102,7 +102,24 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: COLORS.darkgray
-    }      
+    },
+    customTabBar : {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 30,
+        backgroundColor: COLORS.white        
+    },
+    tabBarStyle : {
+        position: 'absolute',
+        left: 0,
+        bottom: 10,
+        right: 0,
+        borderTopWidth: 0,
+        backgroundColor: "transparent",
+        elevation: 0        
+    }
 });
 
 

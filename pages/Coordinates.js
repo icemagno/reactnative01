@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, PermissionsAndroid } from 'react-native';
 import Header from './Header';
-import { useNavigation } from '@react-navigation/native';
 import * as Location from 'expo-location';
 
-export default function Coordinates() {
-    const navigation = useNavigation();
+const Coordinates = ({navigation}) => {
+
     const [lat, setLat] = useState(0.0);
     const [lon, setLon] = useState(0.0);
 
@@ -43,7 +42,9 @@ export default function Coordinates() {
     );
 
 
-  }
+  };
+
+  export default Coordinates;
 
   const styles = StyleSheet.create({
       container: {

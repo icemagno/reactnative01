@@ -3,10 +3,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import Header from './Header';
-import { useNavigation } from '@react-navigation/native';
 import { styles } from '../constants/theme'
 
-export default function Form() {
+const Form = ({ navigation }) => {
   return (
       <>
         <Header title="Cadastro" />
@@ -16,3 +15,5 @@ export default function Form() {
       </>
   );
 }
+
+export default Form;

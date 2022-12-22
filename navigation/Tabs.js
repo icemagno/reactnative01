@@ -4,12 +4,12 @@ import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom
 import Svg, { Path } from 'react-native-svg';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 import { COLORS, icons } from "../constants"
-
+import { styles } from '../constants/theme';
 import Coordinates from '../pages/Coordinates';
 import Form from '../pages/Form';
 import Home from "../pages/Home"
 import HomeAntigo from '../pages/HomeAntigo';
-
+import Mapa from '../pages/Mapa'
 
 const Tab = createBottomTabNavigator();
 
@@ -72,49 +72,43 @@ const CustomTabBar = (props) => {
     if (isIphoneX()) {
         return (
             <View>
-                <View
-                    style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        height: 30,
-                        backgroundColor: COLORS.white
-                    }}
-                ></View>
-                <BottomTabBar
-                    {...props.props}
-                />
+                <View style={styles.customTabBar}></View>
+                <BottomTabBar {...props.props}/>
             </View>
         )
     } else {
-        return (
-            <BottomTabBar
-                {...props.props}
-            />
-        )
+        return (<BottomTabBar {...props.props} /> )
     }
-
 }
 
 const Tabs = () => {
     return (
         <Tab.Navigator
-            screenOptions={{
-                tabBarShowLabel: false,
-                headerShown: false,
-                tabBarStyle: {
-                    position: 'absolute',
-                    left: 0,
-                    bottom: 10,
-                    right: 0,
-                    borderTopWidth: 0,
-                    backgroundColor: "transparent",
-                    elevation: 0
-                }
-            }}
+            initialRouteName="Coordinates"
+            backBehavior="history"
+            screenOptions={{ tabBarShowLabel: false, headerShown: false, tabBarStyle: styles.tabBarStyle }}
             tabBar={(props) => (<CustomTabBar props={props} /> )}
         >
+
+            <Tab.Screen
+                name="Mapa"
+                component={Mapa}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Image
+                            source={icons.location}
+                            resizeMode="contain"
+                            style={{
+                                width: 25,
+                                height: 25,
+                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                            }}
+                        />
+                    ),
+                    tabBarButton: (props) => (<TabBarCustomButton {...props} />)
+                }}
+            />
+
             <Tab.Screen
                 name="Home"
                 component={Home}
@@ -130,11 +124,7 @@ const Tabs = () => {
                             }}
                         />
                     ),
-                    tabBarButton: (props) => (
-                        <TabBarCustomButton
-                            {...props}
-                        />
-                    )
+                    tabBarButton: (props) => (<TabBarCustomButton {...props} />)
                 }}
             />
 
@@ -153,11 +143,7 @@ const Tabs = () => {
                             }}
                         />
                     ),
-                    tabBarButton: (props) => (
-                        <TabBarCustomButton
-                            {...props}
-                        />
-                    )
+                    tabBarButton: (props) => (<TabBarCustomButton {...props} />)
                 }}
             />
 
@@ -176,11 +162,7 @@ const Tabs = () => {
                             }}
                         />
                     ),
-                    tabBarButton: (props) => (
-                        <TabBarCustomButton
-                            {...props}
-                        />
-                    )
+                    tabBarButton: (props) => (<TabBarCustomButton {...props} />)
                 }}
             />
 
@@ -199,11 +181,7 @@ const Tabs = () => {
                             }}
                         />
                     ),
-                    tabBarButton: (props) => (
-                        <TabBarCustomButton
-                            {...props}
-                        />
-                    )
+                    tabBarButton: (props) => (<TabBarCustomButton {...props} />)
                 }}
             />
         </Tab.Navigator>

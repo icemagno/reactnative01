@@ -1,15 +1,13 @@
 // https://www.luiztools.com.br/post/introducao-ao-react-native-3/
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import React, {useState} from 'react';
 import { styles } from '../constants/theme'
 import Header from './Header';
 
-export default function HomeAntigo() {
+const HomeAntigo = ({ navigation }) => {
   const [contador, setContador] = useState(0);
-  const navigation = useNavigation();
 
   function incrementar(){
     setContador(contador+1);
@@ -44,3 +42,4 @@ export default function HomeAntigo() {
 
 };
 
+export default HomeAntigo;
