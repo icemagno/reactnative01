@@ -1,0 +1,72 @@
+mkdir react001
+cd .\react001\
+s
+ls
+node -v
+npm -v
+node -v
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+npm-windows-upgrade
+npm install -g npm-windows-upgrade
+npm -v
+npm-windows-upgrade
+d:
+cd .\react001\
+ls
+npm-windows-upgrade
+npm install -g expo-cli
+npm install -g uuid@latest
+npm install -g expo-cli
+ls
+npm cache clean --force
+ npm install uuid@7.0.3 --force
+npm install -g expo-cli
+expo init reactnative01
+ls
+npm start
+npm run start
+cd .\reactnative01\
+npm run 
+npm start
+npx expo install react-native-web@~0.18.9 react-dom@18.1.0 @expo/webpack-config@^0.17.2
+npm start
+cd ..
+cd reactnative01
+npm start
+npm install @react-navigation/native
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+npm install @react-navigation/stack
+npm run start
+npm install react-native-geolocation-service --save
+npx react-native run-android
+npm run start
+npx expo install expo-location
+npm run start
+expo ba
+npm install -g eas-cli
+eas build -p android
+cd ..
+cd sisgeodef
+eas init --id 6e4ddf6a-73bd-415c-8334-7dc06a87cfe5
+eas build -p android
+git status
+git add .
+git commit -m "Criado eas.json - Use  'eas build -p android' para build "
+git push
+npm run start
+npm install --save -g @react-navigation/bottom-tabs
+npm run start
+npm install -g @react-navigation/bottom-tabs
+npm run start
+npm install @react-navigation/bottom-tabs
+npm run start
+npm -i -g react-native-svg
+expo install react-native-svg
+expo install react-native-iphone-x-helper
+npm run start
+expo install react-native-maps
+npm run start
+expo install native-base
+npm run start
+cd ..
+cd .\sisgeodef-sensor\
