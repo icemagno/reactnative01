@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import React, {useState} from 'react';
-
+import { styles } from '../constants/theme'
 import Header from './Header';
 
 export default function HomeAntigo() {
@@ -18,48 +18,29 @@ export default function HomeAntigo() {
 
   return (
     <>
-    <Header title="Cabeçalho"/>
-    <View style={styles.container}>
-      <Text style={styles.title}>Alô mundo!</Text>
-      <Text>Meu Primeiro App</Text>
-      <Text>Contagem {contador}</Text>
+      <Header title="Inicial Antiga"/>
+      <View style={styles.container}>
+        <Text style={styles.title}>Alô mundo!</Text>
+        <Text>Meu Primeiro App</Text>
+        <Text>Contagem {contador}</Text>
 
-      <TouchableOpacity style={styles.button} onPress={incrementar}>
-        <Text>Pressione Aqui</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={incrementar}>
+          <Text>Pressione Aqui</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Form')}>
-          <Text>Formulário</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Form')}>
+            <Text>Formulário</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coordinates')}>
-          <Text>Coordenadas</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coordinates')}>
+            <Text>Coordenadas</Text>
+        </TouchableOpacity>
 
-      <StatusBar style="auto" />
-    </View>
+        <StatusBar style="auto" />
+      </View>
     </>
   );
 
 
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'black'
-  },
-  button: {
-    marginTop: 20,
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10
-  }
-});

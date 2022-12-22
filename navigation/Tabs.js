@@ -3,12 +3,12 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 import Svg, { Path } from 'react-native-svg';
 import { isIphoneX } from 'react-native-iphone-x-helper';
-
-import Home from "../pages/Home"
-
 import { COLORS, icons } from "../constants"
+
 import Coordinates from '../pages/Coordinates';
 import Form from '../pages/Form';
+import Home from "../pages/Home"
+import HomeAntigo from '../pages/HomeAntigo';
 
 
 const Tab = createBottomTabNavigator();
@@ -106,7 +106,7 @@ const Tabs = () => {
                 tabBarStyle: {
                     position: 'absolute',
                     left: 0,
-                    bottom: 0,
+                    bottom: 10,
                     right: 0,
                     borderTopWidth: 0,
                     backgroundColor: "transparent",
@@ -186,7 +186,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Map"
-                component={Home}
+                component={HomeAntigo}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image

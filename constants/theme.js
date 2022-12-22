@@ -1,4 +1,5 @@
-import { Dimensions } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
 const { width, height } = Dimensions.get("window");
 
 export const COLORS = {
@@ -59,3 +60,49 @@ export const FONTS = {
 const appTheme = { COLORS, SIZES, FONTS };
 
 export default appTheme;
+
+export const styles = StyleSheet.create({
+    headerContainer:{
+        paddingTop: 50,
+        paddingBottom: 10,
+        backgroundColor: COLORS.white,
+        alignItems: 'center',
+        shadowColor: COLORS.black,
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        elevation: 10
+    },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    button: {
+        marginTop: 20,
+        alignItems: "center",
+        backgroundColor: "#DDDDDD",
+        padding: 10
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'black'
+    },
+    button: {
+        marginTop: 20,
+        alignItems: "center",
+        backgroundColor: "#DDDDDD",
+        padding: 10
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: COLORS.darkgray
+    }      
+});
+
+

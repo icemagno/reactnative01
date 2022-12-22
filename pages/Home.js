@@ -9,6 +9,7 @@ import {
     FlatList
 } from "react-native";
 
+import { styles } from '../constants/theme';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 import Header from "./Header";
 
@@ -316,28 +317,11 @@ const Home = ({ navigation }) => {
     return (
         <>
         <Header title="Principal" />
-        <SafeAreaView style={styles.container}>
-            {renderRestaurantList()}
-        </SafeAreaView>
-        </>
+        <View style={styles.container}>
+            <Text>Tela inicial</Text>
+        </View>
+      </>
     )
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: COLORS.lightGray4
-    },
-    shadow: {
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-        elevation: 1,
-    }
-})
+};
 
 export default Home;
