@@ -1,3 +1,4 @@
+import { Row } from "native-base";
 import { Dimensions, StyleSheet } from "react-native";
 
 const { width, height } = Dimensions.get("window");
@@ -80,12 +81,13 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    button: {
-        marginTop: 20,
-        alignItems: "center",
-        backgroundColor: "#DDDDDD",
         padding: 10
+    },
+    buttonArea : {
+        flex: 1,
+        flexDirection : 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
     },
     title: {
         fontSize: 30,
@@ -93,10 +95,18 @@ export const styles = StyleSheet.create({
         color: 'black'
     },
     button: {
-        marginTop: 20,
+        width : 80,
+        padding: 10,
+        borderRadius : 10,
+        margin: 10,
         alignItems: "center",
-        backgroundColor: "#DDDDDD",
-        padding: 10
+        fontSize: 9,
+        backgroundColor: COLORS.black,
+    },
+    buttonText : {
+        color : COLORS.white,
+        fontWeight : "bold",
+        fontSize : 14
     },
     headerText: {
         fontSize: 20,

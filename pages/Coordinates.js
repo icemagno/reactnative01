@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, PermissionsAndroid } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Header from './Header';
 import * as Location from 'expo-location';
+import { styles } from '../constants/theme';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Coordinates = ({navigation}) => {
 
@@ -24,20 +26,18 @@ const Coordinates = ({navigation}) => {
     return (
         <>
           <Header title="Coordenadas" />
-          <View style={styles.container}>
-
-            <Text>Latitude: {lat} </Text>
-            <Text>Longitude: {lon}</Text>
-
-            <TouchableOpacity style={styles.button} onPress={getLocation}>
-                <Text>Ler Coordenadas</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
-               <Text>Voltar</Text>
-            </TouchableOpacity>
-  
-          </View>
+          <SafeAreaView style={styles.container}>
+              <Text>Latitude: {lat} </Text>
+              <Text>Longitude: {lon}</Text>
+              <View style={styles.buttonArea}>
+                  <TouchableOpacity style={styles.button} onPress={getLocation}>
+                      <Text style={styles.buttonText}>Ler</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
+                    <Text style={styles.buttonText}>Voltar</Text>
+                  </TouchableOpacity>
+                </View>
+            </SafeAreaView>
         </>
     );
 
@@ -46,18 +46,5 @@ const Coordinates = ({navigation}) => {
 
   export default Coordinates;
 
-  const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      button: {
-        marginTop: 20,
-        alignItems: "center",
-        backgroundColor: "#DDDDDD",
-        padding: 10
-      }    
-  });
-   
+
   

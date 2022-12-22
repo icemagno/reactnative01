@@ -5,6 +5,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import React, {useState} from 'react';
 import { styles } from '../constants/theme'
 import Header from './Header';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeAntigo = ({ navigation }) => {
   const [contador, setContador] = useState(0);
@@ -17,25 +18,27 @@ const HomeAntigo = ({ navigation }) => {
   return (
     <>
       <Header title="Inicial Antiga"/>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={styles.title}>Alô mundo!</Text>
         <Text>Meu Primeiro App</Text>
         <Text>Contagem {contador}</Text>
 
-        <TouchableOpacity style={styles.button} onPress={incrementar}>
-          <Text>Pressione Aqui</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonArea}>
+          <TouchableOpacity style={styles.button} onPress={incrementar}>
+            <Text style={styles.buttonText}>Conta</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Form')}>
-            <Text>Formulário</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Form')}>
+              <Text style={styles.buttonText}>Form</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coordinates')}>
-            <Text>Coordenadas</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coordinates')}>
+              <Text style={styles.buttonText}>Coord</Text>
+          </TouchableOpacity>
 
-        <StatusBar style="auto" />
-      </View>
+          <StatusBar style="auto" />
+        </View>
+      </SafeAreaView>
     </>
   );
 
